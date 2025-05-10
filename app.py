@@ -3,6 +3,11 @@ import uuid
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Welcome to the Complaint and Feedback System!"
+
+
 # In-memory complaint store (this would typically be a database)
 complaints = {}
 
