@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Break The Silence</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <button id="toggleButton" onclick="toggleMusic()">Play Music</button>
+
+  <audio id="bg-music" loop>
+    <source src="bg-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <div class="header">
+      <img src="images/image10.jpg" alt="Logo">
+      <h1>BREAK THE SILENCE</h1>
+    </div>
+    <p class="quote">"Ragging ends where voice raises"</p>
+    <div class="credits">
+      <p>A Project By:</p>
+      <p>Sanjana Sahu</p>
+      <p>R.Vishali</p>
+      <p>Saina</p>
+      <p>P. Lakshmi Pransana</p>
+      <p>Dolly Kumari</p>
+    </div>
+  </section>
+
+  <!-- Our Purpose -->
+  <section class="our-purpose-section">
+    <h2>OUR PURPOSE</h2>
+    <p>
+      Ragging includes any behavior—verbal, physical, or psychological—that harasses, humiliates, or harms a student. It is a criminal offense in India, with severe legal consequences.
+    </p>
+    <p>
+      This platform, aims to raise awareness, provide support, and empower individuals to take action against ragging. We offer a safe space to report incidents, access resources, and foster a culture of respect, safety, and zero tolerance for bullying. Together, we can create campuses where every student thrives free from fear.
+    </p>
+  </section>
+
+  <!-- Consequences -->
+  <section class="consequences-section">
+    <h2>CONSEQUENCES</h2>
+    <div class="impact-box">
+      <h3>1. Psychological Impact:</h3>
+      <ul>
+        <li>Anxiety & Depression: Victims face fear and sadness.</li>
+        <li>PTSD: Severe trauma can cause flashbacks.</li>
+        <li>Low Self-Esteem: Humiliation damages confidence.</li>
+      </ul>
+    </div>
+    <div class="impact-box">
+      <h3>2. Social Effects:</h3>
+      <ul>
+        <li>Isolation: Victims withdraw and feel alienated.</li>
+        <li>Distrust: Abuse affects relationships.</li>
+        <li>Fear of Reporting: Victims fear retaliation.</li>
+      </ul>
+    </div>
+    <div class="impact-box">
+      <h3>3. Physical & Academic Impact:</h3>
+      <ul>
+        <li>Injuries: Some victims suffer harm.</li>
+        <li>Academic Decline: Stress impacts focus and grades.</li>
+      </ul>
+    </div>
+    <div class="impact-box">
+      <h3>4. Long-Term Effects:</h3>
+      <ul>
+        <li>Mental Health Issues: Trauma can cause lasting problems.</li>
+        <li>Career Impact: Effects may carry over into professional life.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Submit a Complaint -->
+  <section class="complaint-section">
+    <h2>Submit a Complaint</h2>
+    <form id="complaintForm">
+      <label>Full Name:<input type="text" name="full-name" required></label>
+      <label>Email:<input type="email" name="email" required></label>
+      <label>Incident Description:<textarea name="incident-description" required></textarea></label>
+      <label>Date:<input type="date" name="incident-date" required></label>
+      <label>Location:<input type="text" name="incident-location" required></label>
+      <label>Involved Parties:<input type="text" name="involved-parties"></label>
+      <label>Severity:
+        <select name="severity" required>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+      <label>Witness:<input type="text" name="witness"></label>
+      <label for="options">Preferred Action:</label>
+      <select id="options">
+        <option value="">---Select---</option>
+        <option value="none">None</option>
+        <option value="investigation">Investigation</option>
+        <option value="apology">Apology</option>
+        <option value="compensation">Compensation</option>
+        <option value="Other">Other</option>
+      </select>
+      <div id="otherText" style="display:none;">
+        <label>Please specify:<input type="text" id="otherInput" name="otherInput" /></label>
+      </div>
+      <button type="submit">Submit Complaint</button>
+    </form>
+    <div id="complaint-response"></div>
+  </section>
+
+  <!-- Chatbot -->
+  <section class="chatbot-section">
+    <h2>TALK WITH EMILY</h2>
+    <p>No fear. No silence. Just support and safety for every student.</p>
+    <div style="text-align: center;">
+      <a href="https://www.jotform.com/agent/0196b08a45e175ba90b33f58650f77d8e8cd" target="_blank">
+        <button class="chatbot-button">EMILY</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Complaint Tracking -->
+  <section class="tracking-section">
+    <h2>Track Your Complaint</h2>
+    <form id="trackingForm">
+      <label>Complaint ID:<input type="text" id="complaint-id" required></label>
+      <button type="submit">Track Complaint</button>
+    </form>
+    <div id="complaint-status"></div>
+  </section>
+
+  <!-- Feedback Form -->
+  <section class="feedback-section">
+    <h2>Feedback Form</h2>
+    <form action="https://break-the-silence.onrender.com/submit-feedback" method="POST">
+      <label>Name:<input type="text" name="name"></label>
+      <label>Email:<input type="email" name="email"></label>
+      <label>Feedback Type:
+        <select name="feedback-type" required>
+          <option value="general">General</option>
+          <option value="suggestion">Suggestion</option>
+          <option value="issue">Issue</option>
+        </select>
+      </label>
+      <label>Rating:
+        <select name="rating" required>
+          <option value="1">1 - Poor</option>
+          <option value="2">2 - Fair</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </label>
+      <label>Liked:<textarea name="likes"></textarea></label>
+      <label>Suggestions:<textarea name="suggestions"></textarea></label>
+      <label>Issues:<textarea name="issues"></textarea></label>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+
+  <!-- Laws Against Ragging -->
+  <section class="laws-section">
+    <h2>Laws Against Ragging</h2>
+    <p><strong>Anti-Ragging Guidelines (UGC Regulations 2009):</strong></p>
+    <ul>
+      <li>Form Anti-Ragging Committees and Squads</li>
+      <li>Display awareness posters across the campus</li>
+      <li>Conduct orientation and sensitization programs for students and staff</li>
+    </ul>
+    <p><strong>Punishments for Ragging:</strong></p>
+    <ul>
+      <li>Suspension or expulsion</li>
+      <li>Debarment from exams or placements</li>
+      <li>FIR and police action</li>
+      <li>Fine up to ₹25,000 and/or jail up to 3 years</li>
+      <li>Cancellation of admission</li>
+      <li>IPC sections also applicable</li>
+    </ul>
+    <p><strong>Your Rights as a Student:</strong></p>
+    <ul>
+      <li>Right to a safe, respectful, and ragging-free environment</li>
+      <li>Freedom to report anonymously without fear</li>
+      <li>Institutions are legally bound to take action and provide support</li>
+    </ul>
+    <button onclick="toggleContent()">Learn More</button>
+    <div id="additionalContent" class="hidden-content">
+      <h4>Applicable IPC Sections:</h4>
+      <ul>
+        <li>Section 323 – Causing physical hurt</li>
+        <li>Sections 339–341 – Wrongful restraint or confinement</li>
+        <li>Section 354 / 354A – Assault or sexual harassment of women</li>
+        <li>Section 377 – Unnatural sexual offenses</li>
+        <li>Section 294 – Obscene acts in public</li>
+        <li>Section 509 – Insulting the modesty of a woman</li>
+        <li>Section 506 – Criminal intimidation or threats</li>
+        <li>Section 306 – Abetment of suicide</li>
+        <li>Sections 108 / 120B – Abetment and criminal conspiracy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="about-section">
+    <h2>ABOUT US</h2>
+    <p>Our crew members</p>
+    <p>Introducing our team—visionaries committed to shaping a secure, empowering, and transformative educational experience for every student.</p>
+    <ul class="team">
+      <li>SANJANA SAHU</li>
+      <li>R.VISHALI</li>
+      <li>SAINA</li>
+      <li>P. LAKSHMI PRASANA</li>
+      <li>DOLLY KUMARI</li>
+    </ul>
+    <p class="gratitude">
+      We sincerely extend our heartfelt gratitude to Army Public School, R.K. Puram, Secunderabad, for its invaluable support of this initiative. Their steadfast commitment to a ragging-free academic environment and the well-being of students aligns seamlessly with our mission.
+    </p>
+  </section>
+
+  <!-- National Helpline -->
+  <section class="helpline-section">
+    <h2>NATIONAL HELPLINE</h2>
+    <p><strong>UGC Anti-Ragging Helpline</strong></p>
+    <ul>
+      <li>Toll-Free Number: 1800-180-5522 (Available 24x7)</li>
+      <li>Email: helpline@antiragging.in</li>
+      <li>Website: www.antiragging.in</li>
+    </ul>
+    <p><strong>Mental Health & Emotional Support</strong></p>
+    <ul>
+      <li>iCall (TISS): 9152987821</li>
+      <li>Free, confidential emotional support by trained counselors</li>
+      <li>NIMHANS Helpline: 080-46110007</li>
+      <li>AASRA (Suicide Prevention): +91-9820466726</li>
+    </ul>
+  </section>
+
+  <!-- Thank You Section -->
+  <section class="thank-you-section">
+    <h2>Thank You!</h2>
+    <p>We appreciate your engagement and support.</p>
+    <p>Looking forward to serving you again!</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
